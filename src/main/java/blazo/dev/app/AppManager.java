@@ -227,7 +227,7 @@ public class AppManager {
         Person student = getPersonById(studentId, students);
 
         if (student != null) {
-            students.remove(student)
+            students.remove(student);
             System.out.println("\n✅ Student successfully removed!");
         } else {
             System.out.println("\n❌ No student found with ID: " + studentId);
@@ -246,13 +246,14 @@ public class AppManager {
 
         System.out.print("\n🔍 Please enter the student ID: ");
         int studentId = scanner.nextInt();
+        scanner.nextLine();
 
         Student student = (Student) getPersonById(studentId, students);
 
         if (student != null) {
             System.out.println("\n✏️ Updating student: " + student.getName());
 
-            System.out.print("Enter new name (or press Enter to keep '" + student.getName() + "'): ");
+            System.out.print("\nEnter new name (or press Enter to keep '" + student.getName() + "'): ");
             String name = scanner.nextLine();
             if (!name.isEmpty()) {
                 student.setName(name);
